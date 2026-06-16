@@ -1,7 +1,7 @@
 // app.js - Motor de Lógica (Frontend) - MiscSets Finance
 
 // CONFIGURAÇÃO: Insira aqui a mesma URL gerada no seu Apps Script (/exec) para fazer a ponte de API
-const API_URL = 'SUA_URL_DO_APPS_SCRIPT_AQUI/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbyyLKSu0G44xex8kio48IyUoYKim4xP5Sg0qz7Pd22ajRwr_rO1sHi89NRjllRMSkwY/exec';
 
 // Executa automaticamente assim que a página carrega no navegador
 window.addEventListener('load', () => {
