@@ -1,0 +1,321 @@
+/* style.css - Identidade Visual Premium da MiscSets Finance */
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body { 
+  background-color: #121212; 
+  color: #e0e0e0; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+  padding: 15px; 
+}
+
+/* Caixa Principal do App com Borda Gradiente Fixa Premium */
+.app-card { 
+  background-color: #1e1e1e; 
+  width: 100%; 
+  max-width: 400px; 
+  padding: 25px; 
+  border-radius: 15px; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+  position: relative; 
+  overflow: hidden; 
+}
+
+/* O fundo em gradiente ciano e roxo perfeitamente estático */
+.app-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #9b5de5, #00adb5);
+  z-index: 1;
+}
+
+/* Máscara escura interna que define a linha fina de 1.5px nas bordas */
+.app-card::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  background-color: #1e1e1e;
+  border-radius: 14px;
+  z-index: 2;
+}
+
+/* Garante que toda a interface fique visível e operável acima das bordas */
+#telaFormulario {
+  position: relative;
+  z-index: 3;
+}
+
+.app-logo { 
+  display: block; 
+  width: 110px; 
+  height: 110px; 
+  margin: 0 auto 12px auto; 
+  border-radius: 10px; 
+  object-fit: cover; 
+}
+
+/* Estilo do Título Animado com Gradiente */
+.brand { 
+  text-align: center; 
+  font-size: 24px; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+  letter-spacing: 1px;
+  background: linear-gradient(270deg, #00adb5, #9b5de5, #00adb5);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: ArcoIrisMiscSets 5s ease infinite;
+}
+
+@keyframes ArcoIrisMiscSets {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Grid do Painel de Controle (Visual Mobile Premium) */
+.dashboard-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+  margin-bottom: 20px; 
+}
+
+.card-saldo { 
+  background-color: #252525; 
+  border: 1px solid #333; 
+  padding: 10px; 
+  border-radius: 8px; 
+  text-align: center; 
+  transition: 0.3s; 
+}
+
+.card-label { 
+  font-size: 11px; 
+  text-transform: uppercase; 
+  color: #a0a0a0; 
+  font-weight: 600; 
+  letter-spacing: 0.5px; 
+  margin-bottom: 4px; 
+}
+
+.card-val { 
+  font-size: 15px; 
+  font-weight: bold; 
+}
+
+/* Feixes de Luz Neon Customizados para os Saldos */
+.card-entradas { 
+  border-left: 3px solid #00e676; 
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.05); 
+}
+.card-entradas .card-val { 
+  color: #00e676; 
+}
+
+.card-despesas { 
+  border-left: 3px solid #ff5252; 
+  box-shadow: 0 0 10px rgba(255, 82, 82, 0.05); 
+}
+.card-despesas .card-val { 
+  color: #ff5252; 
+}
+
+.card-investido { 
+  border-left: 3px solid #29b6f6; 
+  box-shadow: 0 0 10px rgba(41, 182, 246, 0.05); 
+}
+.card-investido .card-val { 
+  color: #29b6f6; 
+}
+
+.card-atual { 
+  border-left: 3px solid #ffd700; 
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.05); 
+}
+.card-atual .card-val { 
+  color: #ffd700; 
+}
+
+/* Inputs com Efeito de Luz */
+.form-group { 
+  margin-bottom: 15px; 
+}
+
+label { 
+  display: block; 
+  font-size: 13px; 
+  margin-bottom: 6px; 
+  color: #a0a0a0; 
+  font-weight: 500; 
+}
+
+input, select { 
+  width: 100%; 
+  padding: 12px; 
+  background-color: #2d2d2d; 
+  border: 1px solid #3d3d3d; 
+  border-radius: 8px; 
+  color: #fff; 
+  font-size: 16px; 
+  outline: none; 
+  transition: 0.3s; 
+}
+
+input:focus, select:focus { 
+  border-color: #00adb5; 
+  box-shadow: 0 0 12px rgba(0, 173, 181, 0.6), 0 0 20px rgba(155, 93, 229, 0.3); 
+  background-color: #252525; 
+}
+
+/* Botões */
+.btn-salvar { 
+  width: 100%; 
+  padding: 14px; 
+  background-color: #00adb5; 
+  border: none; 
+  border-radius: 8px; 
+  color: #fff; 
+  font-size: 16px; 
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: 0.3s; 
+  margin-top: 5px; 
+}
+.btn-salvar:active { 
+  background-color: #008c93; 
+  transform: scale(0.98); 
+}
+
+.app-footer-buttons { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+  margin-top: 15px; 
+}
+
+.btn-nav { 
+  padding: 12px; 
+  background-color: #2d2d2d; 
+  border: 1px solid #3d3d3d; 
+  border-radius: 8px; 
+  color: #00adb5; 
+  font-size: 13px; 
+  font-weight: bold; 
+  cursor: pointer; 
+  transition: 0.3s; 
+  text-align: center; 
+}
+.btn-nav:hover { 
+  background-color: #252525; 
+  border-color: #00adb5; 
+}
+
+/* Telas Flutuantes (Modais Overlay) - z-index alto para ficar acima do layout principal */
+.chart-overlay { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: #1e1e1e; 
+  padding: 25px; 
+  display: none; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  z-index: 20; 
+}
+
+.chart-header { 
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 20px; 
+  border-bottom: 1px solid #2d2d2d; 
+  padding-bottom: 10px; 
+}
+
+.chart-title { 
+  font-size: 17px; 
+  font-weight: bold; 
+  color: #00adb5; 
+}
+
+.btn-fechar { 
+  background: none; 
+  color: #ff5252; 
+  font-size: 13px; 
+  font-weight: bold; 
+  cursor: pointer; 
+  padding: 5px 10px; 
+  border: 1px solid #ff5252; 
+  border-radius: 5px; 
+  transition: 0.2s; 
+}
+.btn-fechar:active { 
+  background-color: rgba(255, 82, 82, 0.1); 
+}
+
+.chart-container { 
+  width: 100%; 
+  height: auto; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 10px; 
+}
+
+.chart-img { 
+  width: 100%; 
+  max-width: 350px; 
+  height: auto; 
+  border-radius: 10px; 
+  border: 1px solid #3d3d3d; 
+}
+
+/* Container para Scroll da Tabela no Celular */
+.tabela-container { 
+  width: 100%; 
+  height: 80%; 
+  overflow: auto; 
+  border-radius: 10px; 
+  border: 1px solid #3d3d3d; 
+  background-color: #1a1a1a; 
+}
+.tabela-container iframe { 
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+}
+
+#status { 
+  text-align: center; 
+  margin-top: 15px; 
+  font-size: 14px; 
+  font-weight: 500; 
+}
+
+.sucesso { 
+  color: #00e676; 
+}
+
+.erro { 
+  color: #ff5252; 
+}

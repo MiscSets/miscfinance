@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiscSets Finance</title>
+  
+  <!-- Link para a folha de estilos externa organizada -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-card">
+    
+    <div id="telaFormulario">
+      <!-- Nova logo oficial em alta resolução da pasta pública -->
+      <img src="MiscFinance_512x.png" class="app-logo" alt="Logo MiscSets Finance">
+      <div class="brand">MiscSets Finance</div>
+      
+      <div class="dashboard-grid">
+        <div class="card-saldo card-entradas">
+          <div class="card-label">Entradas</div>
+          <div class="card-val" id="valEntradas">...</div>
+        </div>
+        <div class="card-saldo card-despesas">
+          <div class="card-label">Despesas</div>
+          <div class="card-val" id="valDespesas">...</div>
+        </div>
+        <div class="card-saldo card-investido">
+          <div class="card-label">Investido</div>
+          <div class="card-val" id="valInvestido">...</div>
+        </div>
+        <div class="card-saldo card-atual">
+          <div class="card-label">Saldo Atual</div>
+          <div class="card-val" id="valSaldo">...</div>
+        </div>
+      </div>
+      
+      <form id="financeForm" onsubmit="enviarDados(event)">
+        <div class="form-group">
+          <label for="valor">Valor (R$)</label>
+          <input type="number" step="0.01" id="valor" placeholder="0,00" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" placeholder="Ex: Mercado" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" required>
+            <option value="" disabled selected>Escolha a categoria</option>
+            <option value="Mercado">Mercado</option>
+            <option value="Bets">Bets</option>
+            <option value="Entrada">Entrada</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Fatura">Fatura</option>
+            <option value="Parcela">Parcela</option>
+            <option value="Assinaturas">Assinaturas</option>
+            <option value="Investimento">Investimento</option>
+            <option value="Contas">Contas</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Emprestado">Emprestado</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn-salvar" id="btnAcao">SALVAR LANÇAMENTO</button>
+      </form>
+      
+      <div class="app-footer-buttons">
+        <button class="btn-nav" onclick="abrirModal('telaGrafico')">📊 VER PIZZA</button>
+        <button class="btn-nav" onclick="abrirModal('telaTabela')">📈 HISTÓRICO</button>
+      </div>
+      
+      <div id="status"></div>
+    </div>
+
+    <!-- Telas Flutuantes (Modais Overlay) -->
+    <div id="telaGrafico" class="chart-overlay">
+      <div class="chart-header">
+        <div class="chart-title">Resumo Mensal</div>
+        <button class="btn-fechar" onclick="fecharModal('telaGrafico')">✕ FECHAR</button>
+      </div>
+      <div class="chart-container">
+        <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNpvfa8lzG_cBRUSg4t0M1XFsFfUM3YBfpJ871B4v9QTygoxM-Xv6nsrSDWVc0Vo2VHQ_-_ZFuwBus/pubchart?oid=1022033048&format=image" class="chart-img" alt="Gráfico de Pizza">
+      </div>
+    </div>
+
+    <div id="telaTabela" class="chart-overlay">
+      <div class="chart-header">
+        <div class="chart-title">Evolução Patrimonial</div>
+        <button class="btn-fechar" onclick="fecharModal('telaTabela')">✕ FECHAR</button>
+      </div>
+      <div class="tabela-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNpvfa8lzG_cBRUSg4t0M1XFsFfUM3YBfpJ871B4v9QTygoxM-Xv6nsrSDWVc0Vo2VHQ_-_ZFuwBus/pubhtml?gid=1843266057&single=true"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Script de lógica externo e isolado -->
+  <script src="app.js"></script>
+</body>
+</html>
